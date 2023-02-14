@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://allfont.net/allfont.css?fonts=lucida-console"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <title>SCP TERMINAL</title>
+    <script type="text/js" href="index.js"></script>
+    <meta charset="utf-8" />
+    <style>
+                              .mulrep {
+                                background-image:url("https://cdn.glitch.com/e66dba5c-a87d-48d2-b94a-f979677d2971%2Fcrumpled-paper-texture-wrinkled-creased-blank-surface-material_25346-246.jpg?v=1612987103046");
+                                background-size:100% 100%
+                              }
+                              @import {url("consolas.ttf")}
+                              @font-face {
+                                font-family: terminalprompt;
+                                font-strech: expanded;
+                        src: url(https://cdn.glitch.com/e66dba5c-a87d-48d2-b94a-f979677d2971%2Fconsola.ttf?v=1612913067914);
+                              }
+                              .cursor {
+                                animation: 1s blink infinite;
+
+                              }
+                              @keyframes blink {
+                                0% {
+                                  color: white;
+                                }
+                                50% {
+                                  color: black;
+                                }
+                                100% {
+                                  color: white;
+                                }
+                              }
+                              section {
+                                 font-family: terminalprompt;
+                              }
+                              .vibecheck {
+                                letter-spacing:-2px;
+                                tabindex:-1;
+                              }
+
+
+                        div.scanline {
+                      margin-top: -40%;
+                      width: 100%;
+                      height: 60px;
+                      position: relative;
+                      pointer-events: none;
+                      -webkit-animation: scan 12s linear 0s infinite;
+                      animation: scan 12s linear 0s infinite;
+                      background: linear-gradient(to bottom, rgba(56, 112, 82,0), rgba(56, 112, 82,0.1));
+
+                  }
+                  div.scan {
+                    width:100%;
+                    height:60px;
+                    position:relative;
+                    margin-top:-40%;
+                    pointer-events: none;
+                    animation: scan 12s linear 0s infinite;
+                    background: linear-gradient(to bottom, rgba(56, 112, 82,0), rgba(56, 112, 82,0.3));
+
+                  }
+                  /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes scan{
+                from{ transform: translateY(-10%);}
+                to{  transform: translateY(5000%);} /* You may need to change this depending on the length of your terminal. If the scanline stops halfway, increase the second number.*/
+            }
+
+            @keyframes scan{
+                from{ transform: translateY(-10%);}
+                to{  transform: translateY(5000%);} /* Same as above.*/
+            }
+                  body { background-color: #121; overflow-x:hidden;
+                /*background-image:
+                    radial-gradient(ellipse 1000% 100% at 50% 90%, transparent, #121);
+                background-position: center;
+                display: block;
+            /* shadow around the terminal */
+                /*box-shadow: inset 0 0 10em 1em rgba(0,0,0,0.5);
+            /* prevents scanline from forming a scrollwheel */
+               }
+                  .terminal {
+      z-index:100;
+                margin-left:-8px;
+                    margin-top:-8px;
+                      margin-right:-8px;
+                    margin-bottom:-8px;
+                    height:300%;
+                      width:110%;
+
+            /* black shadow at the top of the terminal */
+                    background-repeat:no-repeat;
+                /*background-image:
+                   radial-gradient(ellipse 1000% 100% at 50% 90%, transparent, #121);
+                background-position: center;
+                display: block;
+            /* shadow around the terminal */
+             /* box-shadow: inset 0 0 10em 1em rgba(0,0,0,0.5);
+            /* prevents scanline from forming a scrollwheel */
+                overflow:hidden;}
+
+                  .shadow {
+                    pointer-events:none;
+                    z-index:0;
+                    position:fixed;
+                    width:100%;
+                    height:100%;
+                    left:-0px;
+                    background-repeat:no-repeat;
+                background-image:
+                    radial-gradient(ellipse 1000% 100% at 30% 60%, transparent, #121);
+                background-position: center;
+                display: block;
+            /* shadow around the terminal */
+                /*box-shadow: inset 0 0 10em 1em rgba(0,0,0,0.5);*/
+                  }
+                  .yeet {
+                    position:normal;
+                    z-index:100;
+                  }
+      a:hover{color:darkred;}
+      a {color:red;transition:0.5s;}
+      a:click{color:white;}
+      a:visited{color:inherit;}
+      iframe {z-index:1000;border-radius:20px;border-style:solid;border-color:#131;}
+      div.preventclick{pointer-events:none}
+    </style>
+  </head>
+  <div class="shadow"></div>
+  <body style="">
+    <div class="terminal">
+      <div class="scanline"></div>
+      <section
+        style="
+          padding-top: calc(20px + 37%);
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+        "
+        class="yeet"
+      >
+        <div>
+          <section style="color: white; z-index: 102" id="response"></section>
+          <section style="display: inline-block; color: white">
+            &#62;
+            <section
+              style="color: white; display: inline"
+              id="userinput"
+            ></section>
+            <section style="display: inline" class="cursor">&#9608;</section>
+          </section>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script src="/index.js" defer></script>
+</html>
+<!--█-->
